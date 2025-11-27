@@ -1,0 +1,21 @@
+{
+  "name": "s3-browser",
+  "version": "1.0.0",
+  "description": "Simple and elegant S3 browser for Hetzner Object Storage",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["s3", "browser", "hetzner", "object-storage"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.490.0",
+    "@aws-sdk/s3-request-presigner": "^3.490.0",
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "multer": "^1.4.5-lts.1"
+  }
+}
+

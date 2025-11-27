@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 Browser - Hetzner Object Storage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📦 S3 Browser</h1>
+            <div class="breadcrumb" id="breadcrumb">
+                <span class="breadcrumb-item" data-path="">Home</span>
+            </div>
+        </header>
+
+        <div class="toolbar">
+            <button class="btn btn-primary" id="refreshBtn">🔄 Refresh</button>
+            <button class="btn btn-success" id="uploadBtn">📤 Upload File</button>
+            <div class="loading" id="loading" style="display: none;">Loading...</div>
+        </div>
+
+        <div class="file-list" id="fileList">
+            <div class="empty-state">
+                <p>Loading files...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upload File</h2>
+                <button class="modal-close" id="closeUploadModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="uploadForm">
+                    <input type="file" id="fileInput" required>
+                    <div class="form-group">
+                        <label>File Name (optional):</label>
+                        <input type="text" id="fileNameInput" placeholder="Leave empty to use original name">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                        <button type="button" class="btn btn-secondary" id="cancelUploadBtn">Cancel</button>
+                    </div>
+                </form>
+                <div id="uploadProgress" style="display: none; margin-top: 16px;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p id="uploadStatus"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirm Delete</h2>
+                <button class="modal-close" id="closeDeleteModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="deleteMessage"></p>
+                <div class="form-actions">
+                    <button class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+                    <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
