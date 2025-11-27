@@ -24,7 +24,7 @@ A simple and elegant web-based browser for Hetzner Object Storage (S3-compatible
    - Copy `.env.example` to `.env`
    - Fill in your Hetzner Object Storage credentials:
      ```
-     S3_ENDPOINT=https://your-bucket-name.your-region.hetzner.cloud
+     S3_ENDPOINT=https://nbg1.your-objectstorage.com
      S3_REGION=nbg1
      S3_BUCKET_NAME=your-bucket-name
      AWS_ACCESS_KEY_ID=your-access-key
@@ -50,7 +50,7 @@ A simple and elegant web-based browser for Hetzner Object Storage (S3-compatible
 
 ## Notes
 
-- The endpoint format for Hetzner is: `https://bucket-name.region.hetzner.cloud`
+- The endpoint format for Hetzner is: `https://nbg1.your-objectstorage.com`
 - Make sure your bucket name matches the one in the endpoint URL
 - The server runs on port 3000 by default (configurable via `PORT` in `.env`)
 
